@@ -51,7 +51,7 @@ function buildTotalEmbed(total: RankEntry[]): EmbedBuilder {
     .setTitle('🏆 Ranking Geral')
     .setDescription(formatRankList(total))
     .setTimestamp()
-    .setFooter({ text: 'PacketAd • packetloss.com.br' })
+    .setFooter({ text: 'PacketAds • packetloss.com.br' })
 }
 
 function buildWeeklyEmbed(weekly: RankEntry[]): EmbedBuilder {
@@ -64,7 +64,7 @@ function buildWeeklyEmbed(weekly: RankEntry[]): EmbedBuilder {
         : formatRankList(weekly),
     )
     .setTimestamp()
-    .setFooter({ text: 'PacketAd • packetloss.com.br' })
+    .setFooter({ text: 'PacketAds • packetloss.com.br' })
 }
 
 function buildUpcomingEmbed(proxima: ProximaPartida): EmbedBuilder {
@@ -74,7 +74,7 @@ function buildUpcomingEmbed(proxima: ProximaPartida): EmbedBuilder {
       .setTitle('📆 Próxima Partida')
       .setDescription('_Nenhuma partida agendada no momento._')
       .setTimestamp()
-      .setFooter({ text: 'PacketAd • packetloss.com.br' })
+      .setFooter({ text: 'PacketAds • packetloss.com.br' })
   }
 
   const embed = new EmbedBuilder()
@@ -95,7 +95,7 @@ function buildUpcomingEmbed(proxima: ProximaPartida): EmbedBuilder {
       },
     )
     .setTimestamp()
-    .setFooter({ text: 'PacketAd • packetloss.com.br' })
+    .setFooter({ text: 'PacketAds • packetloss.com.br' })
 
   if (proxima.description) {
     embed.setDescription(proxima.description)

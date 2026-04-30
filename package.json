@@ -1,8 +1,8 @@
 {
-  "name": "packetad",
+  "name": "packetads",
   "version": "1.0.0",
   "author": "sistematico",
-  "description": "Bot Discord PacketAd — envia anúncios periódicos do site packetloss.com.br",
+  "description": "Bot Discord PacketAds — envia anúncios periódicos do site packetloss.com.br",
   "license": "ISC",
   "main": "dist/bot.js",
   "type": "module",

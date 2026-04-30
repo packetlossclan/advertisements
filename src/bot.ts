@@ -11,19 +11,19 @@ const client = new Client({
 })
 
 client.once(Events.ClientReady, (c) => {
-  console.log(`[PacketAd] Conectado como ${c.user.tag}`)
+  console.log(`[PacketAds] Conectado como ${c.user.tag}`)
   startScheduler(client)
 })
 
 process.on('SIGINT', () => {
-  console.log('[PacketAd] Encerrando…')
+  console.log('[PacketAds] Encerrando…')
   stopScheduler()
   client.destroy()
   process.exit(0)
 })
 
 process.on('SIGTERM', () => {
-  console.log('[PacketAd] Encerrando…')
+  console.log('[PacketAds] Encerrando…')
   stopScheduler()
   client.destroy()
   process.exit(0)
