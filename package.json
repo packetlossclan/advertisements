@@ -1,0 +1,28 @@
+{
+  "name": "packetad",
+  "version": "1.0.0",
+  "author": "sistematico",
+  "description": "Bot Discord PacketAd — envia anúncios periódicos do site packetloss.com.br",
+  "license": "ISC",
+  "main": "dist/bot.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/bot.ts",
+    "build": "tsc",
+    "start": "node dist/bot.js",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "discord.js": "^14.26.3",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}
