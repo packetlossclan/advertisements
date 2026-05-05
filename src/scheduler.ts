@@ -1,11 +1,12 @@
 import type { Client, TextChannel } from 'discord.js'
 import { fetchAdvertisementPayload } from './api.js'
+import type { AdvertisementPayload } from './api.js'
 import { buildEmbeds } from './formatter.js'
 
 let timer: ReturnType<typeof setTimeout> | null = null
 
 async function tick(client: Client): Promise<void> {
-  let payload
+  let payload: AdvertisementPayload | undefined
   try {
     payload = await fetchAdvertisementPayload()
   } catch (err) {
