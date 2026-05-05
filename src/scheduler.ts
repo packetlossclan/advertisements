@@ -58,7 +58,8 @@ export function startScheduler(client: Client): void {
       intervalMinutes = payload.config.intervalMinutes
       await tick(client)
     } catch (err) {
-      console.error('[scheduler] Erro no loop:', err)
+      const message = err instanceof Error ? err.message : String(err)
+      console.warn(`[scheduler] API indisponível, tentando novamente em ${intervalMinutes} minuto(s): ${message}`)
     }
 
     const ms = Math.max(intervalMinutes, 1) * 60 * 1000

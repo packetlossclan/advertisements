@@ -45,7 +45,11 @@ export async function fetchAdvertisementPayload(): Promise<AdvertisementPayload>
   })
 
   if (!res.ok) {
-    throw new Error(`API retornou ${res.status}: ${await res.text()}`)
+    const contentType = res.headers.get('content-type') ?? ''
+    const isJson = contentType.includes('application/json')
+    const body = isJson ? await res.text() : ''
+    const detail = body ? `: ${body.slice(0, 200)}` : ''
+    throw new Error(`API retornou ${res.status} ${res.statusText}${detail}`)
   }
 
   return res.json() as Promise<AdvertisementPayload>
