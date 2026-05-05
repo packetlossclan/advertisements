@@ -52,18 +52,20 @@ async function tick(client: Client): Promise<void> {
 export function startScheduler(client: Client): void {
   async function loop(): Promise<void> {
     let intervalMinutes = 60
+    let ms: number
 
     try {
       const payload = await fetchAdvertisementPayload()
       intervalMinutes = payload.config.intervalMinutes
       await tick(client)
+      ms = Math.max(intervalMinutes, 1) * 60 * 1000
+      console.log(`[scheduler] Próximo envio em ${intervalMinutes} minuto(s).`)
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err)
-      console.warn(`[scheduler] API indisponível, tentando novamente em ${intervalMinutes} minuto(s): ${message}`)
+      ms = 60 * 1000
+      console.warn(`[scheduler] API indisponível, tentando novamente em 60 segundo(s): ${message}`)
     }
 
-    const ms = Math.max(intervalMinutes, 1) * 60 * 1000
-    console.log(`[scheduler] Próximo envio em ${intervalMinutes} minuto(s).`)
     timer = setTimeout(loop, ms)
   }
 
