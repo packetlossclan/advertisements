@@ -3,9 +3,9 @@ Description=PacketLoss Advertisements Bot Service
 After=network.target
 
 [Service]
-User=nginx
+User=packetloss
 WorkingDirectory=/var/www/packetads
-ExecStart=/home/nginx/.local/share/pnpm run start
+ExecStart=/home/packetloss/.local/share/pnpm run start
 Restart=always
 RestartSec=10
 StandardOutput=syslog
