@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 User=packetloss
-WorkingDirectory=/var/www/packetads
-ExecStart=/home/packetloss/.local/share/pnpm run start
+WorkingDirectory=/home/packetloss/packetads
+ExecStart=/home/packetloss/.local/share/pnpm/pnpm run start
 Restart=always
 RestartSec=10
 StandardOutput=syslog
